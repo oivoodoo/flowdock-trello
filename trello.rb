@@ -3,7 +3,7 @@ require 'faraday'
 require 'json'
 require 'time'
 
-trello_boards  = ENV['TRELLO_BOARDS'].split(',').inject([]) {|boards, id| boards << {'id' = > id}}
+trello_boards  = ENV['TRELLO_BOARDS'].split(',').inject([]) {|boards, id| boards << {'id' => id}}
 trello_key     = ENV['TRELLO_KEY']
 trello_token   = ENV['TRELLO_TOKEN']
 flowdock_token = ENV['FLOWDOCK_TOKEN']
