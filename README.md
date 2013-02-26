@@ -26,4 +26,5 @@ Heroku Deployment:
   heroku config:set TRELLO_TOKEN=(trello token here)
   heroku config:set FLOWDOCK_TOKEN=(flowdock token here)
   heroku config:set FLOWDOCK_EMAIL=(email here)
+  heroku ps:scale worker=1
 
