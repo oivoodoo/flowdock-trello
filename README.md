@@ -15,11 +15,15 @@ Usage locally:
 
 Or you can use rc file with ```source``` command for loading settings:
 
+```
   cp rc.example rc
+```
 
 Set keys and load to the current environment:
 
+```
   source rc
+```
 
 Heroku Deployment:
 ==================
