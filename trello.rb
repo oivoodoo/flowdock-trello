@@ -30,6 +30,8 @@ flowdock = Faraday.new(:url => 'https://api.flowdock.com') do |faraday|
 end
 
 while true
+  puts 'Waiting trello notifications...'
+
   trello_boards.each do |trello_board|
     board_id = trello_board['id']
     last_time = trello_board['last_time']
