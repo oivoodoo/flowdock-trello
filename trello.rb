@@ -3,9 +3,9 @@ require 'faraday'
 require 'json'
 require 'time'
 
-trello_boards = ENV['TRELLO_BOARDS'].split(',').inject([]) {|boards, id| boards << {'id' => id}}
-trello_key = ENV['TRELLO_KEY']
-trello_token = ENV['TRELLO_TOKEN']
+trello_boards  = ENV['TRELLO_BOARDS'].split(',').inject([]) {|boards, id| boards << {'id' = > id}}
+trello_key     = ENV['TRELLO_KEY']
+trello_token   = ENV['TRELLO_TOKEN']
 flowdock_token = ENV['FLOWDOCK_TOKEN']
 flowdock_email = ENV['FLOWDOCK_EMAIL']
 
@@ -38,13 +38,13 @@ while true
       response = trello.get "/1/boards/#{board_id}/actions?key=#{trello_key}&token=#{trello_token}"
       results = JSON.parse(response.body)
       results.reverse!
-      
+
       if last_time
         results.each do |result|
           begin
             next if Time.parse(result['date']) <= last_time
             puts result.inspect
-            
+
             data = result['data']
             source = 'Trello'
             from = result['memberCreator']['fullName']
@@ -92,7 +92,7 @@ while true
               next
             end
             content = text_to_html(content)
-            
+
             flowdock.post "/v1/messages/team_inbox/#{flowdock_token}", {
               :source => source,
               :from_address => from_address,
@@ -111,7 +111,7 @@ while true
       else
         puts "Skipping #{board_id}"
       end
-      
+
       # Set last time of most recent result
       results.each do |result|
         timestamp = Time.parse(result['date'])
@@ -125,3 +125,4 @@ while true
 
   sleep 60
 end
+
