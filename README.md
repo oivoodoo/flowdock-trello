@@ -16,6 +16,15 @@ FLOWDOCK_EMAIL=(email here)
 
 bundle exec ruby trello.rb
 
+Or you can use rc file:
+
+  cp rc.example rc
+
+Set all needed keys in the rc file and before run bundle exec ruby trello.rb,
+use:
+
+  source rc
+
 Heroku Deployment:
 ==================
 

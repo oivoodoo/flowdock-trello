@@ -1,0 +1,6 @@
+export FLOWDOCK_EMAIL=user@examlpe.com
+export FLOWDOCK_TOKEN=token
+export TRELLO_BOARDS=board
+export TRELLO_KEY=key
+export TRELLO_TOKEN=token-trello
+
